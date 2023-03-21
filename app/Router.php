@@ -1,7 +1,6 @@
 <?php
 
 namespace App;
-
 class Router
 {
     private $routes;
@@ -14,8 +13,10 @@ class Router
     public function load(string $uri, ?string $type = 'GET', ?array $params = null)
     {
         if (!isset($this->routes[$uri])) {
+
+            //var_dump($this->routes);
             header('HTTP/1.0 404 Not Found');
-            exit();
+                exit();
         }
 
         $match = false;
